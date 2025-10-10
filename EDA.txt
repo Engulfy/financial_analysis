@@ -1,0 +1,2 @@
+Through initial EDA exploration, found out that dataset consists of 1200 rows by 9 columns.
+Columns include ['transaction_id', 'date', 'amount', 'category', 'merchant', 'payment_method', 'account_type', 'transaction_type', 'description']
