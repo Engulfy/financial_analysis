@@ -1,2 +1,31 @@
-Through initial EDA exploration, found out that dataset consists of 1200 rows by 9 columns.
+Through initial EDA exploration, it was found that the dataset consists of 1200 rows and 9 columns, indicating 1200 recorded transactions.
 Columns include ['transaction_id', 'date', 'amount', 'category', 'merchant', 'payment_method', 'account_type', 'transaction_type', 'description']
+
+Quantitative data: 'amount'
+Categorical data: 'category', 'merchant', 'payment_method', 'account_type', 'transaction_type'
+
+Value Checks:
+Date ranges from: 2024-08-26 14:40:08.881401 to 2025-08-25 14:40:08.881401 (convereted to datetime)
+
+category → 10 unique values
+Values: ['Utilities', 'Groceries', 'Travel', 'Shopping', 'Entertainment', 'Rent/Mortgage', 'Subscriptions', 'Healthcare', 'Dining', 'Other'] 
+
+merchant → 32 unique values
+Values: ['Water Works', 'Whole Foods', 'Uber', 'Mall Store', 'Costco', 'Best Buy', 'AMC Theatres', 'Mortgage Bank', 'Hilton', 'Amazon', 'Spotify', 'Airbnb', 'Landlord', 'Amazon Prime', 'Netflix', 'Dental Care', 'Walmart', 'Starbucks', 'Clinic', 'Target', 'Gym Membership', 'Concert Hall', 'Miscellaneous', 'Pharmacy', 'Apple Music', 'Gas Utility', 'Chipotle', "Trader Joe's", 'Electric Co', "McDonald's", 'Delta', 'Local Cafe'] 
+
+payment_method → 5 unique values
+Values: ['Bank Transfer', 'Debit Card', 'Mobile Payment', 'Credit Card', 'Cash'] 
+
+account_type → 3 unique values
+Values: ['Savings', 'Investment', 'Checking'] 
+
+transaction_type → 4 unique values
+Values: ['Deposit', 'Payment', 'Transfer', 'Withdrawal'] 
+
+Other things that can be checked: missing values/duplicate values, checking transaction ID for uniqueness, amount if its negative
+Description seems to be a bunch of random words pieced together but some shows useful information (like monthly subscription). (so can keep)
+
+Findings:
+No duplicate rows, no missing values, no invalid date, but 2 negative amount (for further inspection)
+Overall, the dataset is clean and well-structured, suitable for further analysis such as spending categorisation, or anomaly detection.
+The date column was converted to datetime format to enable temporal analysis
