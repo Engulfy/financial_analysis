@@ -1,5 +1,4 @@
 import pandas as pd
-import numpy as np
 
 data_source = 'financial_transactions.csv'
 def load_data(path):
@@ -44,6 +43,8 @@ def validate_data(df):
         neg_count = (df['amount'] < 0).sum()
         if neg_count > 0:
             print(f"{neg_count} negative amounts found.\n")
+            df = df[df['amount'] >= 0]
+            print(df.shape)
         else:
             print("No negative amounts detected.\n")
     
@@ -63,6 +64,10 @@ def validate_data(df):
     
     return df
 
-df = load_data(data_source)
-df = clean_data(df)
-df = validate_data(df)
+def load_and_prepare(path='financial_transactions.csv'):
+    df = load_data(path)
+    df = clean_data(df)
+    df = validate_data(df)
+    return df
+
+

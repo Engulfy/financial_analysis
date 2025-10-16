@@ -29,3 +29,10 @@ Findings:
 No duplicate rows, no missing values, no invalid date, but 2 negative amount (for further inspection)
 Overall, the dataset is clean and well-structured, suitable for further analysis such as spending categorisation, or anomaly detection.
 The date column was converted to datetime format to enable temporal analysis
+
+Through exploring the 2 negative amount: 
+These are the rows:
+S-Gym Membership-9,2025-04-26 14:40:08.881401,-4.14,Subscriptions,Gym Membership,Cash,Checking,Payment,Monthly subscription: Gym Membership
+S-Amazon Prime-9,2025-04-28 14:40:08.881401,-2.97,Subscriptions,Amazon Prime,Bank Transfer,Checking,Payment,Monthly subscription: Amazon Prime
+Might be an anomaly and hence removed for usage (lines 806, 815)
+
