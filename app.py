@@ -3,14 +3,14 @@ import pandas as pd
 import altair as alt
 from explore import load_and_prepare
 
+st.set_page_config(page_title = "Transactions Dashboard", layout = "wide")
+st.title("Transactions Dashboard")
+
 @st.cache_data
 def get_data():
     return load_and_prepare("financial_transactions.csv")
 
 df = get_data()
-
-st.set_page_config(page_title = "Transactions Dashboard", layout = "wide")
-st.title("Transactions Dashboard")
 
 # Filter tab on left sidebar
 st.sidebar.header("Filters")
